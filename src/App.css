@@ -57,3 +57,31 @@ body {
   width: 235px;
   object-fit: cover;
 }
+
+/* ONE GAME */
+
+.oneGame {
+  display: flex;
+}
+
+.img-oneGame img {
+  height: auto;
+  width: 400px;
+  object-fit: contain;
+}
+
+/* TRAITEMENT DE TEXTE */
+
+.title-center {
+  text-align: center;
+}
+
+.container1game {
+  width: 40%;
+  border: solid 1px red;
+  height: 50%;
+}
+
+.container2game {
+  display: block;
+}

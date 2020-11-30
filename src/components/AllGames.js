@@ -9,7 +9,7 @@ const AllGames = ({ data, setData }) => {
           return (
             <>
               <div key={games.id} />
-              <Link>
+              <Link to={`/games/${games.id}`}>
                 <div className="one-card">
                   <img src={games.background_image} alt="" />
                   <p>{games.name}</p>

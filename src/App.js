@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 
 // IMPORT CONTAINERS
 import Home from "./containers/Home";
+import Game from "./containers/Game";
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
         <Header />
       </Route>
       <Switch>
+        <Route path="/games/:id">
+          <Game />
+        </Route>
         <Route path="/">
           <Home />
         </Route>
