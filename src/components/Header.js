@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <>
-      <div class="header-container">
+      <div className="header-container">
         <Link to="/">
           <img
             src="https://banner2.cleanpng.com/20180207/hpq/kisspng-game-controller-scalable-vector-graphics-video-gam-video-game-controller-5a7b6c093b7b32.4982172515180380252436.jpg"
@@ -12,7 +12,7 @@ const Header = () => {
           />
         </Link>
         <h2>GamePad</h2>
-        <div class="search-input">
+        <div className="search-input">
           <input type="text" placeholder="Rechercher des jeux" />
         </div>
 
@@ -21,7 +21,7 @@ const Header = () => {
         </Link>
 
         <Link>
-          <button class="header-button login">Login</button>
+          <button className="header-button login">Login</button>
         </Link>
       </div>
     </>
