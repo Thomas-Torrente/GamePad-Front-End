@@ -35,6 +35,11 @@ body {
 }
 
 /* Home ALL GAMES */
+.banniere-games {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
 
 .container-cards {
   width: 1280px;
@@ -66,8 +71,8 @@ body {
 
 .img-oneGame img {
   height: auto;
-  width: 400px;
-  object-fit: contain;
+  width: 500px;
+  object-fit: cover;
 }
 
 /* TRAITEMENT DE TEXTE */

@@ -35,6 +35,9 @@ const Home = () => {
         <div>
           <AllGames data={data} setData={setData} />
         </div>
+        <div className="pagination">
+          <button>Page suivante </button>
+        </div>
       </div>
     </>
   );
