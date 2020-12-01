@@ -8889,6 +8889,13 @@ react-property@1.0.1:
   resolved "https://registry.yarnpkg.com/react-property/-/react-property-1.0.1.tgz#4ae4211557d0a0ae050a71aa8ad288c074bea4e6"
   integrity sha512-1tKOwxFn3dXVomH6pM9IkLkq2Y8oh+fh/lYW3MJ/B03URswUTqttgckOlbxY2XHF3vPG6uanSc4dVsLW/wk3wQ==
 
+react-read-more@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-read-more/-/react-read-more-1.0.0.tgz#86a9e8ac14fa37863d99187d8d500457ce32b840"
+  integrity sha1-hqnorBT6N4Y9mRh9jVAEV84yuEA=
+  dependencies:
+    rimraf "^2.5.4"
+
 react-router-dom@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-5.2.0.tgz#9e65a4d0c45e13289e66c7b17c7e175d0ea15662"

@@ -27,11 +27,18 @@ body {
   height: 60px;
   padding-right: 10px;
 }
-
 .search-input {
-  width: 900px;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.search {
+  margin-top: 30px;
   height: 50px;
-  color: red;
+  width: 50%;
+  padding-left: 40px;
 }
 
 /* Home ALL GAMES */
@@ -63,6 +70,35 @@ body {
   object-fit: cover;
 }
 
+.pagination {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.button-next {
+  border: solid red 1px;
+  background-color: white;
+  color: red;
+  border-radius: 10px;
+  padding: 10px;
+  margin-left: 50%;
+}
+
+.button-previus {
+  border: solid red 1px;
+  background-color: white;
+  color: red;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+button:hover {
+  background-color: red;
+  color: white;
+  border: red;
+}
 /* ONE GAME */
 
 .oneGame {
@@ -73,6 +109,15 @@ body {
   height: auto;
   width: 500px;
   object-fit: cover;
+}
+.container2game {
+  padding-left: 20px;
+  display: flex;
+}
+
+.plateform {
+  /* flex-direction: row; */
+  padding-left: 20px;
 }
 
 /* TRAITEMENT DE TEXTE */

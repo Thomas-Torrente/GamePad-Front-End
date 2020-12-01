@@ -15,8 +15,24 @@ const OneGame = ({ data, setData }) => {
 
         <div cla="container2game">
           {" "}
-          <h3>Plateforme</h3>
-          {/* <p> {data.platforms.platform.name}</p> */}
+          <h2>Plateforme</h2>
+          {data.platforms.map((plateforme, index) => {
+            return (
+              <div className="plateform">
+                <div key={plateforme.platform.id}>
+                  <p>{plateforme.platform.name}</p>
+                </div>
+              </div>
+            );
+          })}
+          <h2>Genre(s)</h2>
+          {data.genres.map((genre, index) => {
+            return (
+              <div key={genre.id}>
+                <p>{genre.name}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
       <h3>Description</h3>
