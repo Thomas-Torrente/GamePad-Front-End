@@ -16,17 +16,34 @@ body {
 
 .header-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
   border-bottom: 1px solid red;
   padding: 10px 0;
   padding-bottom: 20px;
+}
+
+.header-button {
+  margin-right: 20px;
+}
+
+.header1 {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.header2  {
+  justify-content: flex-end;
+  display: flex;
 }
 .header-container img {
   width: 90px;
   height: 60px;
   padding-right: 10px;
 }
+
+/* Home ALL GAMES */
+
 .search-input {
   display: flex;
 
@@ -40,8 +57,6 @@ body {
   width: 50%;
   padding-left: 40px;
 }
-
-/* Home ALL GAMES */
 .banniere-games {
   display: flex;
   justify-content: center;
@@ -60,8 +75,13 @@ body {
   cursor: pointer;
   display: flex;
   flex-direction: column;
-
+  text-decoration: none;
   align-items: center;
+  color: black;
+}
+.one-card:hover {
+  background-color: red;
+  color: white;
 }
 
 .one-card img {
@@ -78,19 +98,10 @@ body {
 }
 
 .button-next {
-  border: solid red 1px;
-  background-color: white;
-  color: red;
-  border-radius: 10px;
-  padding: 10px;
   margin-left: 50%;
 }
 
 .button-previus {
-  border: solid red 1px;
-  background-color: white;
-  color: red;
-  border-radius: 10px;
   padding: 10px;
 }
 
@@ -98,7 +109,9 @@ button:hover {
   background-color: red;
   color: white;
   border: red;
+  cursor: pointer;
 }
+
 /* ONE GAME */
 
 .oneGame {
@@ -110,14 +123,16 @@ button:hover {
   width: 500px;
   object-fit: cover;
 }
+.container1game {
+  width: 40%;
+  /* border: solid 1px red; */
+  height: 50%;
+}
 .container2game {
-  padding-left: 20px;
-  display: flex;
+  width: 60%;
 }
 
 .plateform {
-  /* flex-direction: row; */
-  padding-left: 20px;
 }
 
 /* TRAITEMENT DE TEXTE */
@@ -125,13 +140,25 @@ button:hover {
 .title-center {
   text-align: center;
 }
-
-.container1game {
-  width: 40%;
-  border: solid 1px red;
-  height: 50%;
+h1 {
+  font-weight: bold;
+  font-size: 40px;
 }
 
-.container2game {
-  display: block;
+h3 {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-size: 20px;
+}
+/*  GÉNÉRAL */
+
+button {
+  border: solid red 1px;
+  background-color: white;
+  color: red;
+  border-radius: 10px;
+  padding: 10px;
+}
+p:hover {
+  /* color: white; */
 }

@@ -4,7 +4,7 @@ import parse from "html-react-parser";
 const OneGame = ({ data, setData }) => {
   return (
     <>
-      <h2 className="title-center">{data.name_original}</h2>
+      <h1 className="title-center">{data.name_original}</h1>
       <div className="oneGame">
         <div className="container1game">
           {" "}
@@ -15,7 +15,7 @@ const OneGame = ({ data, setData }) => {
 
         <div cla="container2game">
           {" "}
-          <h2>Plateforme</h2>
+          <h3>Plateforme : </h3>
           {data.platforms.map((plateforme, index) => {
             return (
               <div className="plateform">
@@ -25,7 +25,7 @@ const OneGame = ({ data, setData }) => {
               </div>
             );
           })}
-          <h2>Genre(s)</h2>
+          <h3>Genre(s)</h3>
           {data.genres.map((genre, index) => {
             return (
               <div key={genre.id}>
