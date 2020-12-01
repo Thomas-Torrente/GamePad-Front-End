@@ -12,9 +12,6 @@ const Header = () => {
           />
         </Link>
         <h2>GamePad</h2>
-        <div className="search-input">
-          <input type="text" placeholder="Rechercher des jeux" />
-        </div>
 
         <Link>
           <button className="header-button my-collection">My collection</button>

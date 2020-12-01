@@ -6,9 +6,13 @@ import AllGames from "../components/AllGames";
 const Home = () => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [search, setSearch] = useState("");
+  const [page, setPage] = useState();
 
   const fetchData = async () => {
-    const response = await axios.get("https://api.rawg.io/api/games");
+    const response = await axios.get(
+      `https://api.rawg.io/api/games?search=${search}?page=${page}`
+    );
 
     console.log(response.data);
 
@@ -27,6 +31,16 @@ const Home = () => {
     <>
       <div className="all-pages-games">
         <div className="banniere-games">
+          <div className="search-input">
+            <input
+              type="text"
+              placeholder="Rechercher des jeux"
+              value={search}
+              onChange={(event) => {
+                setSearch(event.target.value);
+              }}
+            />
+          </div>
           <img
             src="https://icn.lycee-valin.fr/projets2018/seconde3/eleve18/banni%C3%A8re.png"
             alt=""
@@ -36,7 +50,13 @@ const Home = () => {
           <AllGames data={data} setData={setData} />
         </div>
         <div className="pagination">
-          <button>Page suivante </button>
+          <button
+            onClick={(event) => {
+              setPage(event.target.value);
+            }}
+          >
+            Page suivante{" "}
+          </button>
         </div>
       </div>
     </>

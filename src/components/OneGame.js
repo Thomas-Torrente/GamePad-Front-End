@@ -1,4 +1,5 @@
 import React from "react";
+import parse from "html-react-parser";
 
 const OneGame = ({ data, setData }) => {
   return (
@@ -19,7 +20,7 @@ const OneGame = ({ data, setData }) => {
         </div>
       </div>
       <h3>Description</h3>
-      <p> {data.description}</p>
+      <p> {parse(data.description)}</p>
     </>
   );
 };
