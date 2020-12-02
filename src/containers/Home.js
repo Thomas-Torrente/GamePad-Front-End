@@ -8,18 +8,18 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
-
-  const fetchData = async () => {
-    const response = await axios.get(
-      `https://api.rawg.io/api/games?page=${page}&search=${search}`
-    );
-
-    console.log(response.data);
-
-    setData(response.data);
-    setIsLoading(false);
-  };
   useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get(
+        `https://api.rawg.io/api/games?page=${page}&search=${search}`
+      );
+
+      console.log(response.data);
+
+      setData(response.data);
+      setIsLoading(false);
+    };
+
     fetchData();
   }, [search, page]);
   // console.log(data.results && data.results.length);

@@ -7,12 +7,14 @@ const Game = () => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
-  const fetchData = async () => {
-    const response = await axios.get(`https://api.rawg.io/api/games/${id}`);
-    setData(response.data);
-    setIsLoading(false);
-  };
+
   useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get(`https://api.rawg.io/api/games/${id}`);
+      setData(response.data);
+      setIsLoading(false);
+    };
+
     fetchData();
   }, [id]);
 

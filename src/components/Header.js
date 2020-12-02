@@ -18,7 +18,7 @@ const Header = ({ token, setUser }) => {
           {token ? (
             // si le token existe donc si le user est connecter afficher ca :
             <>
-              <Link>
+              <Link to="/my-collection">
                 <button className="header-button my-collection">
                   My collection
                 </button>

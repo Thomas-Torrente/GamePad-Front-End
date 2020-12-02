@@ -7,15 +7,14 @@ const AllGames = ({ data, setData }) => {
       <div className="container-cards">
         {data.results.map((games, index) => {
           return (
-            <>
+            <Link to={`/games/${games.id}`}>
               <div key={games.id} />
-              <Link to={`/games/${games.id}`}>
-                <div className="one-card">
-                  <img src={games.background_image} alt="" />
-                  <p>{games.name}</p>
-                </div>
-              </Link>
-            </>
+
+              <div className="one-card">
+                <img src={games.background_image} alt="" />
+                <p>{games.name}</p>
+              </div>
+            </Link>
           );
         })}
       </div>

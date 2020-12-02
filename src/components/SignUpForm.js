@@ -61,7 +61,7 @@ const SignUpForm = ({
           <p>{alertMessage}</p>
           <button type="submit"> SignUp</button>
           <h3>OR</h3>
-          <Link>
+          <Link to="/login">
             <button>Login</button>
           </Link>
         </form>
