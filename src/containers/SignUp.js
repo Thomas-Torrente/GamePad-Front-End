@@ -6,7 +6,7 @@ import useSound from "use-sound";
 import why from "../assets/sound/why.mp3";
 import { useHistory } from "react-router-dom";
 
-const SignUp = () => {
+const SignUp = ({ setUser }) => {
   const history = useHistory();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -38,7 +38,7 @@ const SignUp = () => {
       console.log(response.data.token);
       // Cookies.set, créer le cookie, userToken est son nom et token est sa valeur
 
-      setUser(whenSubmit.data.token);
+      setUser(response.data.token);
       history.push("/");
     }
     if (checked === false) {
