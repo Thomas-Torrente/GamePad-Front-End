@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ token, setUser }) => {
   return (
     <>
       <div className="header-container">
@@ -15,15 +15,31 @@ const Header = () => {
           <h1>GamePad</h1>
         </div>
         <div className="header2">
-          <Link>
-            <button className="header-button my-collection">
-              My collection
-            </button>
-          </Link>
+          {token ? (
+            // si le token existe donc si le user est connecter afficher ca :
+            <>
+              <Link>
+                <button className="header-button my-collection">
+                  My collection
+                </button>
+              </Link>
 
-          <Link>
-            <button className="header-button login">Login</button>
-          </Link>
+              <button
+                onClick={() => {
+                  setUser(null);
+                }}
+              >
+                Disconnect
+              </button>
+            </>
+          ) : (
+            // sinon afficher ca
+            <>
+              <Link to="/signup">
+                <button className="header-button login">SignUp</button>
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </>
