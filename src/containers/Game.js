@@ -1,4 +1,3 @@
-import Axios from "axios";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import OneGame from "../components/OneGame";
@@ -15,7 +14,7 @@ const Game = () => {
   };
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [id]);
 
   return isLoading ? (
     <>
