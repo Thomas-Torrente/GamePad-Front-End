@@ -39,7 +39,7 @@ function App() {
         </Route>
 
         <Route path="/login">
-          <Login />
+          <Login setUser={setUser} setToken={setToken} />
         </Route>
 
         <Route path="/games/:id">

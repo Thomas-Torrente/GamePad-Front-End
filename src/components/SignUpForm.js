@@ -61,9 +61,7 @@ const SignUpForm = ({
           <p>{alertMessage}</p>
           <button type="submit"> SignUp</button>
           <h3>OR</h3>
-          <Link to="/login">
-            <button>Login</button>
-          </Link>
+          <Link to="/login">Already have an account ? Login now</Link>
         </form>
       </div>
     </>
