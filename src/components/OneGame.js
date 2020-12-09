@@ -45,7 +45,7 @@ const OneGame = ({ game, token, setUser, sugestGame, data }) => {
       <p> {parse(game.description)}</p>
       {token ? (
         <>
-          <StarsRatting data={data} />
+          {/* <StarsRatting data={data} /> */}
           <Link to={`/games/${game.slug}/create-review`}>
             <button>Write a review</button>
           </Link>
@@ -59,16 +59,19 @@ const OneGame = ({ game, token, setUser, sugestGame, data }) => {
       )}
       <div>
         <h3>Suggested Games</h3>
-        {sugestGame.results.map((suggested, index) => {
-          return (
-            <>
-              <div key={suggested.id}>
-                <img src={suggested.background_image} alt="" />
-                <p>{suggested.name}</p>
-              </div>
-            </>
-          );
-        })}
+        <div className="sugest-game">
+          {sugestGame.results.map((suggested, index) => {
+            return (
+              <Link to={`/games/${suggested.id}`}>
+                <div key={suggested.id}>
+                  <img src={suggested.background_image} alt="" />
+
+                  <p>{suggested.name}</p>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </>
   );

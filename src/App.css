@@ -135,6 +135,17 @@ button:hover {
 .plateform {
 }
 
+.sugest-game {
+  display: flex;
+  overflow-x: scroll;
+}
+
+.sugest-game img {
+  width: 220px;
+  height: 300px;
+  padding-right: 5px;
+  object-fit: cover;
+}
 /* Signup */
 
 .signup-container,

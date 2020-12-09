@@ -16,7 +16,6 @@ const Game = ({ token, setUser }) => {
       );
       setGame(responseGame.data);
       console.log(responseGame.data);
-      setIsLoading(false);
     };
 
     fetchDataGame();
@@ -31,6 +30,7 @@ const Game = ({ token, setUser }) => {
       );
       setSugestGame(responseSugestGame.data);
       console.log("---->", responseSugestGame.data);
+      setIsLoading(false);
     };
 
     fetchGameSugest();
