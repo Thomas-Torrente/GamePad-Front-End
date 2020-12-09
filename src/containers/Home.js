@@ -14,7 +14,7 @@ const Home = () => {
         `https://api.rawg.io/api/games?page=${page}&search=${search}`
       );
 
-      console.log(response.data);
+      // console.log(response.data);
 
       setData(response.data);
       setIsLoading(false);

@@ -154,7 +154,8 @@ button:hover {
   text-align: center;
 }
 
-.signup-form input {
+.signup-form input,
+textarea {
   border: none;
   border-bottom: 1px solid red;
   height: 35px;

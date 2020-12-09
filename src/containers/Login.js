@@ -3,7 +3,7 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import LoginForm from "../components/LoginForm";
 
-const Login = ({ setToken, setUser }) => {
+const Login = ({ setUser }) => {
   const history = useHistory();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -20,10 +20,12 @@ const Login = ({ setToken, setUser }) => {
 
       const response = await axios.post(
         "https://back-end-gamepad.herokuapp.com/user/login",
-
+        // "http://localhost:3100/user/login",
         { username: username, password: password }
       );
-      if (setUser(response.data.token)) {
+      console.log(response.data);
+      if (response.data.token) {
+        setUser(response.data.token);
         history.push("/");
       } else {
         setAlertMessage("error");

@@ -3,19 +3,37 @@ import axios from "axios";
 import OneGame from "../components/OneGame";
 import { useParams } from "react-router-dom";
 
-const Game = () => {
-  const [data, setData] = useState({});
+const Game = ({ token, setUser }) => {
+  const [sugestGame, setSugestGame] = useState({});
+  const [game, setGame] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await axios.get(`https://api.rawg.io/api/games/${id}`);
-      setData(response.data);
+    const fetchDataGame = async () => {
+      const responseGame = await axios.get(
+        `https://api.rawg.io/api/games/${id}`
+      );
+      setGame(responseGame.data);
+      console.log(responseGame.data);
       setIsLoading(false);
     };
 
-    fetchData();
+    fetchDataGame();
+  }, [id]);
+
+  // ----------------------------------------------------------------------------------
+
+  useEffect(() => {
+    const fetchGameSugest = async () => {
+      const responseSugestGame = await axios.get(
+        `https://api.rawg.io/api/games/${id}/suggested`
+      );
+      setSugestGame(responseSugestGame.data);
+      console.log("---->", responseSugestGame.data);
+    };
+
+    fetchGameSugest();
   }, [id]);
 
   return isLoading ? (
@@ -25,7 +43,14 @@ const Game = () => {
   ) : (
     <>
       <div>
-        <OneGame data={data} setData={setData} />
+        <OneGame
+          sugestGame={sugestGame}
+          setSugestGame={setSugestGame}
+          game={game}
+          setGame={setGame}
+          token={token}
+          setUser={setUser}
+        />
       </div>
     </>
   );
