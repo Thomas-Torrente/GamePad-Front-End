@@ -1,11 +1,11 @@
 import React from "react";
 import ReactStars from "react-rating-stars-component";
-const StarsRatting = ({ data }) => {
+const StarsRatting = ({ game }) => {
   return (
     <>
       <ReactStars
         count={5}
-        value={data.rating}
+        value={game.rating}
         size={24}
         isHalf={true}
         emptyIcon={<i className="far fa-star"></i>}

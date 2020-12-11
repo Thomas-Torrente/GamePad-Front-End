@@ -22,6 +22,9 @@ const Home = () => {
 
     fetchData();
   }, [search, page]);
+
+  // --------------------------------------------------------------
+
   // console.log(data.results && data.results.length);
   return isLoading ? (
     <>

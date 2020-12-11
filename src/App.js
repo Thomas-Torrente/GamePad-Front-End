@@ -46,7 +46,7 @@ function App() {
           <Game token={token} setUser={setUser} />
         </Route>
 
-        <Route path="/create-review">
+        <Route path="/create-review/:slug">
           <CreateReview />
         </Route>
         <Route path="/">

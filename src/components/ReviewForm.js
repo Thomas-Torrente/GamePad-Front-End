@@ -3,17 +3,19 @@ import React from "react";
 const ReviewForm = ({
   title,
   setTitle,
-  comments,
-  setComments,
+  description,
+  setDescription,
   whenSubmit,
   // screen,
   // setScreen,
   alertMessage,
+  slug,
 }) => {
   return (
     <>
       <div className="signup-container">
         <form onSubmit={whenSubmit} className="signup-form">
+          <input type="text" value={slug} disabled="disabled" />
           <input
             type="text"
             placeholder="Your review Title"
@@ -26,22 +28,12 @@ const ReviewForm = ({
           <textarea
             type="text"
             placeholder="Your review Comments"
-            value={comments}
+            value={description}
             onChange={(event) => {
-              setComments(event.target.value);
+              setDescription(event.target.value);
             }}
           />
 
-          {/* <input
-            type="file"
-            accept=".png, .jpeg, .jpg, .svg"
-              transformation: [{ width: 500, height: 500, crop: "limit" }],
-
-            value={screen}
-            onChange={(event) => {
-              setScreen(event.target.files);
-            }}
-          /> */}
           <button type="submit">Submit Review</button>
         </form>
       </div>

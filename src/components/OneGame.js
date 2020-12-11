@@ -5,12 +5,14 @@ import StarsRatting from "./StarsRating";
 
 import { Link } from "react-router-dom";
 
-const OneGame = ({ game, token, setUser, sugestGame, data }) => {
+const OneGame = ({ game, token, setUser, sugestGame, commentGame }) => {
   // console.log(data);
 
   return (
     <>
-      <h1 className="title-center">{game.name_original}</h1>
+      <div className="title-one-game ">
+        <h1 className="title-center">{game.name_original}</h1>
+      </div>
       <div className="oneGame">
         <div className="container1game">
           {" "}
@@ -31,6 +33,16 @@ const OneGame = ({ game, token, setUser, sugestGame, data }) => {
               </div>
             );
           })}
+          {/* ---------------------- */}
+          <h3>Developers</h3>
+          {game.developers.map((developers, index) => {
+            return (
+              <div>
+                <p>{developers.name}</p>
+              </div>
+            );
+          })}
+          {/* ---------------------- */}
           <h3>Genre(s)</h3>
           {game.genres.map((genre, index) => {
             return (
@@ -41,14 +53,34 @@ const OneGame = ({ game, token, setUser, sugestGame, data }) => {
           })}
         </div>
       </div>
-      <h3>Description</h3>
-      <p> {parse(game.description)}</p>
+      <div className="one-game-description">
+        <h3>Description</h3>
+        <p> {parse(game.description)}</p>
+      </div>
+
+      {/* <div>
+        <h3>All Comments</h3>
+
+        {commentGame.commentsAll.map((comment, index) => {
+          return (
+            <div>
+              <p>{comment.title}</p>
+              <p>{comment.description}</p>
+            </div>
+          );
+        })}
+      </div> */}
       {token ? (
         <>
-          {/* <StarsRatting data={data} /> */}
-          <Link to={`/games/${game.slug}/create-review`}>
-            <button>Write a review</button>
-          </Link>
+          <div className="avis">
+            <div className="stars-ratting">
+              <StarsRatting game={game} />
+            </div>
+
+            <Link to={`/create-review/${game.slug}`}>
+              <button>Write a review</button>
+            </Link>
+          </div>
         </>
       ) : (
         <>
@@ -66,7 +98,7 @@ const OneGame = ({ game, token, setUser, sugestGame, data }) => {
                 <div key={suggested.id}>
                   <img src={suggested.background_image} alt="" />
 
-                  <p>{suggested.name}</p>
+                  <p className="title-center">{suggested.name}</p>
                 </div>
               </Link>
             );
